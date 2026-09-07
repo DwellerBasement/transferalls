@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b5r6rxcra6bnm"]
+
+[ext_resource type="Script" uid="uid://bwkpb2iooq50o" path="res://Scripts/EnemyPlaceHolder.gd" id="1_eqkw6"]
+[ext_resource type="Texture2D" uid="uid://dfeh67mk10gnv" path="res://Assets/slime_green.png" id="2_fxstl"]
+[ext_resource type="PackedScene" uid="uid://b06e7tuv2bk4q" path="res://hp/HurtZone.tscn" id="3_ljrxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nuwh"]
+size = Vector2(17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cf3a"]
+atlas = ExtResource("2_fxstl")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw75g"]
+atlas = ExtResource("2_fxstl")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hio17"]
+atlas = ExtResource("2_fxstl")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my8s5"]
+atlas = ExtResource("2_fxstl")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljrxf"]
+atlas = ExtResource("2_fxstl")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfhit"]
+atlas = ExtResource("2_fxstl")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5a0dp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cf3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw75g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hio17")
+}],
+"loop": true,
+"name": &"chasing",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my8s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljrxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfhit")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cf3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw75g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hio17")
+}],
+"loop": true,
+"name": &"patrol",
+"speed": 4.0
+}]
+
+[node name="EnemyGrunt" type="CharacterBody2D" unique_id=1957935897]
+collision_layer = 4
+script = ExtResource("1_eqkw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=212865262]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_3nuwh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=461871633]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_5a0dp")
+animation = &"damaged"
+autoplay = "patrol"
+frame_progress = 0.027989097
+
+[node name="HurtZone" parent="." unique_id=1223060346 instance=ExtResource("3_ljrxf")]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://b3d77cin2kpcq"]
+
+[ext_resource type="Texture2D" uid="uid://drd4yhmspextu" path="res://Assets/Minecraft Apple Texture.png" id="1_00wps"]
+[ext_resource type="Script" uid="uid://cksl4ekfdjsf" path="res://InventorySys/InvernetoryItem.gd" id="2_6o4ql"]
+
+[resource]
+script = ExtResource("2_6o4ql")
+Name = " Stick"
+ItemTexture = ExtResource("1_00wps")
+metadata/_custom_type_script = "uid://cksl4ekfdjsf"

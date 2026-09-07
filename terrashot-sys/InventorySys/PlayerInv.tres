@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Inv" format=3 uid="uid://vrrhn7c2750"]
+
+[ext_resource type="Script" uid="uid://bv0kkfyqwsp6a" path="res://InventorySys/InvSlot.gd" id="1_y85rl"]
+[ext_resource type="Resource" uid="uid://bo3rhjqdyjgfw" path="res://InventorySys/Items/AppleItem.tres" id="2_2uwm7"]
+[ext_resource type="Script" uid="uid://ctv1i61yju03r" path="res://InventorySys/InventorySys.gd" id="3_tih0j"]
+
+[sub_resource type="Resource" id="Resource_sdcnd"]
+script = ExtResource("1_y85rl")
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_2uwm7"]
+script = ExtResource("1_y85rl")
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_tih0j"]
+script = ExtResource("1_y85rl")
+Item = ExtResource("2_2uwm7")
+Amount = 2
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_0qcl4"]
+script = ExtResource("1_y85rl")
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_br12d"]
+script = ExtResource("1_y85rl")
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_ccbc4"]
+script = ExtResource("1_y85rl")
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_1hann"]
+script = ExtResource("1_y85rl")
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[sub_resource type="Resource" id="Resource_740qd"]
+script = ExtResource("1_y85rl")
+Item = ExtResource("2_2uwm7")
+Amount = 1
+metadata/_custom_type_script = "uid://bv0kkfyqwsp6a"
+
+[resource]
+script = ExtResource("3_tih0j")
+Slots = Array[ExtResource("1_y85rl")]([SubResource("Resource_sdcnd"), SubResource("Resource_2uwm7"), SubResource("Resource_tih0j"), SubResource("Resource_0qcl4"), SubResource("Resource_br12d"), SubResource("Resource_ccbc4"), SubResource("Resource_1hann"), SubResource("Resource_740qd")])
+metadata/_custom_type_script = "uid://ctv1i61yju03r"

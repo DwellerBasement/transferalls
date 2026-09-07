@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ckt4x1pe25fnd"]
+
+[ext_resource type="Script" uid="uid://cc2nvqn2wta8u" path="res://InventorySys/InvUISlot.gd" id="1_sbi4i"]
+[ext_resource type="Texture2D" uid="uid://bcsf61lptsta8" path="res://Assets/Survival Game Background Art.png" id="2_i4voh"]
+[ext_resource type="PackedScene" uid="uid://x7xsidbrg6lf" path="res://InventorySys/InvUISlot.tscn" id="3_vk2rr"]
+
+[node name="InvUI" type="Control" unique_id=22851474]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sbi4i")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=787051918]
+layout_mode = 0
+offset_right = 205.0
+offset_bottom = 98.0
+texture = ExtResource("2_i4voh")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=2008880513]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 45.0
+scale = Vector2(2.6062832, 2.4909146)
+columns = 4
+
+[node name="InvUISlot" parent="NinePatchRect/GridContainer" unique_id=1090406259 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot2" parent="NinePatchRect/GridContainer" unique_id=596055488 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot3" parent="NinePatchRect/GridContainer" unique_id=1059623880 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot4" parent="NinePatchRect/GridContainer" unique_id=1407898131 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot5" parent="NinePatchRect/GridContainer" unique_id=1405078828 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot6" parent="NinePatchRect/GridContainer" unique_id=696950229 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot7" parent="NinePatchRect/GridContainer" unique_id=842466376 instance=ExtResource("3_vk2rr")]
+layout_mode = 2
+
+[node name="InvUISlot8" parent="NinePatchRect/GridContainer" unique_id=1901717154 instance=ExtResource("3_vk2rr")]
+layout_mode = 2

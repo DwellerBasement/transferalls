@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds66ssay2fhwh"]
+
+[ext_resource type="Script" uid="uid://sqpfs565ymdl" path="res://Scripts/MeleeWeapon.gd" id="1_becel"]
+[ext_resource type="Texture2D" uid="uid://c6luyhky8rym3" path="res://Assets/icon.svg" id="2_djriq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1gob"]
+size = Vector2(21, 8)
+
+[sub_resource type="Animation" id="Animation_jw32o"]
+resource_name = "Attack"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(19.15, 0), Vector2(34, 0), Vector2(19.15, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_50glp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vy5pj"]
+_data = {
+&"Attack": SubResource("Animation_jw32o"),
+&"RESET": SubResource("Animation_50glp")
+}
+
+[node name="WeaponSword" type="Node2D"]
+script = ExtResource("1_becel")
+Damage = 20
+HitForce = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(34, 0)
+scale = Vector2(0.14843753, 0.062499996)
+texture = ExtResource("2_djriq")
+offset = Vector2(-2.579, 0)
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(23.81, 0.39000034)
+shape = SubResource("RectangleShape2D_v1gob")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vy5pj")
+}

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://8ncgbhcd8na8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqupw"]
+
+[node name="PatrolPoint" type="Area2D" unique_id=1418598089]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=330500757]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=838753916]
+shape = SubResource("CircleShape2D_yqupw")

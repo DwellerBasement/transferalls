@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bayamvs68fs5f"]
+
+[ext_resource type="Script" uid="uid://b2ihakei23pvs" path="res://Scripts/RangedWeapon.gd" id="1_kxpgj"]
+[ext_resource type="Texture2D" uid="uid://c6luyhky8rym3" path="res://Assets/icon.svg" id="1_sdrwn"]
+[ext_resource type="PackedScene" uid="uid://dl5xclfge4yax" path="res://Scenes/Proj.tscn" id="2_hqk8y"]
+
+[sub_resource type="Animation" id="Animation_hqk8y"]
+resource_name = "Shoot"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_umlkg"]
+_data = {
+&"Shoot": SubResource("Animation_hqk8y")
+}
+
+[node name="RangedWeapon" type="Node2D" unique_id=1801451920]
+script = ExtResource("1_kxpgj")
+ProjectileScene = ExtResource("2_hqk8y")
+HitForce = 2
+range = 37.07
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=228882520]
+position = Vector2(17.999998, 0)
+scale = Vector2(0.04406171, 0.35963243)
+texture = ExtResource("1_sdrwn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1381850893]
+libraries/ = SubResource("AnimationLibrary_umlkg")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1791256584]
